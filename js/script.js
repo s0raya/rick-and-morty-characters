@@ -3,7 +3,7 @@ const nextPage = document.getElementById('next-page');
 const prevPage = document.getElementById('prev-page');
 let currentPage = 1;
 
-// Imagenes, nombres y especies
+// Tenemos que obtener las imagenes, nombres y especies.
 function fetchData(page) {
     fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
         .then(response => {
@@ -23,7 +23,10 @@ function fetchData(page) {
     });
 };
 
-fetchData(currentPage);
+fetchData(currentPage); // llamo a la función para indicarle que estoy en la primera pagina
+
+/******************Paginacion *****************************/
+
 nextPage.addEventListener('click', () => {
     if (currentPage < 42) {
         currentPage++;
